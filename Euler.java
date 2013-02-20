@@ -1,5 +1,4 @@
 import java.util.*;
-import static java.lang.Math.*;
 
 public class Euler {
     private HashMap<Integer,Integer> fibCache = new HashMap<Integer,Integer>();
@@ -67,4 +66,53 @@ public class Euler {
         }
         return largest;
     }
-}
+
+
+    /*
+     * Euler 4
+     * A palindromic number reads the same both ways. The largest palindrome made from the product of 
+     * two 2-digit numbers is 9009 = 91 × 99.  Find the largest palindrome made from the product of 
+     * two 3-digit numbers.
+     */  
+    public int euler4() {
+        int palindrome = 0;
+        for (int i=100;i<1000;i++) {
+            for (int j=100;j<1000;j++) {
+                int prod = i*j;
+                String prodStr = Integer.toString(prod);
+                String reverseProd = new StringBuffer(prodStr).reverse().toString();
+                if (prodStr.equals(reverseProd))
+                    if (prod > palindrome)
+                        palindrome = prod;
+            }
+        }
+        return palindrome;
+    }
+
+    /*
+     * Euler 5
+     * 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without 
+     * any remainder. What is the smallest positive number that is evenly divisible by all of the 
+     * numbers from 1 to 20?
+     */
+    public int euler5() {
+	int smallest = 20;
+	boolean foundit = false;
+	while (true) {
+	    for (int i=2;i<=20;i++) {
+		if ((smallest % i) == 0) {
+		    foundit = true;
+		    continue;
+		} else {
+		    smallest += 20;
+		    foundit = false;
+		    break;
+		}
+	    }
+	    if (foundit)
+		break;
+	}
+	return smallest;
+    }
+
+}//end Euler
