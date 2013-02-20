@@ -1,7 +1,9 @@
 import java.util.*;
+import static java.lang.Math.*;
 
 public class Euler {
-    HashMap<Integer,Integer> fibCache = new HashMap<Integer,Integer>();
+    private HashMap<Integer,Integer> fibCache = new HashMap<Integer,Integer>();
+
     /*
      * Euler 1
      * If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. 
@@ -48,5 +50,21 @@ public class Euler {
             i = i + 1;
         }
         return sum;
+    }
+
+    /*
+    * The prime factors of 13195 are 5, 7, 13 and 29.
+    * What is the largest prime factor of the number 600851475143?
+    */
+    public long euler3 () {
+        long number = 600851475143L;
+        long largest = 0;
+        for (int i = 2; i <= number / i; i++) {
+            if (number % i == 0) {
+                largest = i;
+                number = number / i;
+            }
+        }
+        return largest;
     }
 }
