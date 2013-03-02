@@ -1,10 +1,9 @@
-(define p (org.apache.tools.ant.Project))
-(define classpath (org.apache.tools.ant.types.Path p ".:./build"))
+;kant build file
+(set-classpath ".:./build")
 
 (mkdir "./build")
-(javac p "./build" "./src" classpath)
-(java p "RunEuler" classpath)
-(java p "Palindrome" classpath "ABBA")
-(java p "TwoArrays" classpath)
-(java p "RemoveChar" classpath "kant k")
-
+(javac "./build" "./src")
+(java "RunEuler")
+(java "Palindrome" "ABBA")
+(java "TwoArrays")
+(java "RemoveChar" "kant k")
