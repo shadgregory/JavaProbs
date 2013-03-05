@@ -6,5 +6,6 @@ public class RunEuler {
         System.out.println("3. The largest prime factor is " + e.euler3());
         System.out.println("4. The largest palindrome is " + e.euler4());
         System.out.println("5. The smallest number is " + e.euler5());
+	System.out.println("6. The difference is " + e.euler6());
     }
 }
