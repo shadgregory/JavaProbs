@@ -129,4 +129,27 @@ public class Euler {
 	return sum_numbers * sum_numbers - sum_squares;
     }
 
+    /* Euler 7
+     * What is the 10,001st prime number?
+     */
+    public int euler7() {
+	ArrayList<Integer> primes = new ArrayList<Integer>();
+	primes.add(3);
+	int n = 5;
+	while (primes.size() <= 10001) {
+	    boolean notPrime = false;
+	    for (int current : primes) {
+		if (n % current == 0) {
+		    notPrime = true;
+		    n += 2;
+		    break;
+		}
+	    }
+	    if (notPrime) continue;
+	    primes.add(n);
+	    n += 2;
+	}
+	return primes.get(9999);
+    }
+
 }//end Euler
