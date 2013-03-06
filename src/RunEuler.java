@@ -8,5 +8,6 @@ public class RunEuler {
         System.out.println("5. The smallest number is " + e.euler5());
 	System.out.println("6. The difference is " + e.euler6());
 	System.out.println("7. The 10,001st prime is " + e.euler7());
+	System.out.println("8. The largest product is " + e.euler8());
     }
 }
